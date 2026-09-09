@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luxury Food Photo Transformer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8D%BD%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Michelin-grade rendering studio</p>
+    <h1>Luxury Food Photo<span> Transformer</span></h1>
+    <p class="lede">
+      Drop in up to four food photos. Every single one comes back re-plated as a
+      5-star, editorial-quality food photograph in 9:16 &mdash; ready for TikTok,
+      Reels, Shorts and Pinterest.
+    </p>
+    <div class="status" id="status"><span class="dot"></span><span id="statusText">Checking studio&hellip;</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="panel" id="uploadPanel">
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Add food photos">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5M12 4v11m0-11 4.5 4.5M12 4 7.5 8.5"/></svg>
+      <p class="dz-title">Drag photos here, or click to choose</p>
+      <p class="dz-sub">1&ndash;4 photos &middot; JPG, PNG or WebP &middot; up to 20&nbsp;MB each</p>
+      <input type="file" id="fileInput" accept="image/*" multiple hidden />
+    </div>
+
+    <div class="tray" id="tray" hidden></div>
+
+    <div class="actions">
+      <p class="count" id="count">0 of 4 selected</p>
+      <div class="btn-row">
+        <button class="btn ghost" id="clearBtn" hidden>Clear</button>
+        <button class="btn primary" id="transformBtn" disabled>Transform to Michelin quality</button>
+      </div>
+    </div>
+    <p class="alert" id="alert" hidden></p>
+  </section>
+
+  <section id="results" hidden>
+    <div class="results-head">
+      <h2>Your plates</h2>
+      <button class="btn ghost" id="downloadAll">Download all</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="tip" id="tip" hidden></p>
+    <div class="results-foot">
+      <button class="btn ghost" id="againBtn">Transform another batch</button>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>Every uploaded photo is transformed individually &mdash; none are ever skipped.</span>
+  <a href="/api/prompt" target="_blank" rel="noopener">View the rendering brief</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
