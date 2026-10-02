@@ -183,7 +183,6 @@ export function NotFor() {
       {NOT_FOR.map((w, i) => (
         <group key={w} position={[(i - 1.5) * 6.2, 3.2, -3 - (i % 2) * 1.2]}>
           <mesh><boxGeometry args={[3.6, 5, 0.3]} /><meshStandardMaterial color="#1a1c21" metalness={0.7} roughness={0.4} emissive={COLORS.brass} emissiveIntensity={0.06} /></mesh>
-          <Label position={[0, 0, 0.2]} size={0.34} color={COLORS.white}>{w.toUpperCase().replace('.', '')}</Label>
         </group>
       ))}
       <pointLight position={[0, 8, 6]} intensity={120} distance={30} color="#ffe6bf" />

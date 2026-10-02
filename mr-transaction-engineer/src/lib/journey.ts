@@ -95,7 +95,7 @@ export const BEATS: Beat[] = [
   { id: 'b8', s0: 3.02, s1: 3.45, size: 'lg', lines: ['DON’T JUST LOOK AT THE PROPERTY.', 'ENGINEER THE TRANSACTION.'] },
   { id: 'b9', s0: 3.85, s1: 4.4, size: 'md', align: 'left', lines: ['EDDIE RAYMOND', '“MR. TRANSACTION ENGINEER”'] },
   { id: 'b10', s0: 4.45, s1: 4.95, size: 'sm', align: 'left', lines: ['FORECLOSURE, SUB-TO & CREATIVE FINANCE SPECIALIST', 'CREATOR OF TRANSACTION ENGINEER ACADEMY'] },
-  { id: 'b11', s0: 4.88, s1: 5.4, size: 'sm', align: 'bottom', tag: 'THE 9-STRATEGY ENGINE', lines: ['SELECT A STRATEGY TO EXPLORE IT.'], sub: 'Transaction Engineer 9-Strategy Blueprint' },
+  { id: 'b11', s0: 4.88, s1: 5.4, size: 'sm', align: 'bottom', tag: 'THE 9-STRATEGY ENGINE', lines: ['SELECT A STRATEGY TO EXPLORE IT.'] },
   { id: 'b12', s0: 5.45, s1: 5.86, size: 'md', align: 'bottom', lines: ['ONE DEAL DOESN’T HAVE ONLY ONE PATH.'] },
   { id: 'b13', s0: 5.88, s1: 6.86, size: 'lg', align: 'bottom', lines: ['MULTIPLE STRATEGIES.', 'MULTIPLE WAYS TO GET PAID.'], sub: 'Not every strategy fits every property. Outcomes are never guaranteed.' },
   { id: 'b14', s0: 6.88, s1: 7.45, size: 'xl', lines: ['LOOK CLOSER.'] },
