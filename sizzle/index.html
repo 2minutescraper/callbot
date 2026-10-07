@@ -36,190 +36,131 @@ h2{font-size:92px}
 #wave{display:flex;align-items:center;gap:8px;height:160px}
 #wave i{display:block;width:10px;border-radius:5px;background:linear-gradient(#a5b4fc,#6366f1);height:20px}
 .ring{position:absolute;border:3px solid var(--ind);border-radius:50%;opacity:0}
+.stat3{padding:44px 44px;opacity:0;width:500px}
+.stat3 b{display:block;font-size:150px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.stat3 h3{font-size:36px;margin:14px 0 10px}.stat3 p{font-size:25px;color:var(--mute);line-height:1.35}
+.sl{margin-bottom:34px;opacity:0}.sl .t{display:flex;justify-content:space-between;font-size:30px;font-weight:600;margin-bottom:14px}
+.sl .bar{height:14px;border-radius:7px;background:#26264a;position:relative}.sl .fill{position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:linear-gradient(90deg,#6366f1,#c084fc);width:0}
+.fc{padding:44px;width:520px;opacity:0}.fc .ic{font-size:64px;margin-bottom:20px}.fc h3{font-size:42px;margin-bottom:14px}.fc p{font-size:26px;color:var(--mute);line-height:1.4}
+.chip{display:inline-block;padding:12px 24px;border-radius:99px;background:#22c55e22;border:2px solid #22c55e66;color:var(--grn);font-weight:700;font-size:26px;margin:0 12px 12px 0;opacity:0}
+.step{display:flex;align-items:center;gap:36px;padding:34px 44px;margin-bottom:26px;opacity:0;width:1100px}
+.step .n{width:84px;height:84px;border-radius:50%;background:var(--ind);display:grid;place-items:center;font-size:44px;font-weight:800;flex:none}
+.step h3{font-size:44px}.step p{font-size:27px;color:var(--mute);margin-top:6px}
 </style></head>
 <body><div id="stage"><div id="grid"></div>
+<div class="scene" id="s1"><div class="abs" style="left:140px;top:290px">
+<h1 class="big" id="hook1"></h1><h1 class="big grad" id="hook2" style="margin-top:10px"></h1></div></div>
 
-<!-- S1 hook -->
-<div class="scene" id="s1">
-  <div class="abs" style="left:140px;top:300px">
-    <h1 class="big" id="hook1"></h1>
-    <h1 class="big grad" id="hook2" style="margin-top:10px"></h1>
-  </div>
-</div>
-
-<!-- S2 find -->
 <div class="scene" id="s2">
-  <div class="abs" style="left:140px;top:200px;width:700px">
-    <div class="eyebrow">01 · Find</div>
-    <h2 style="margin-top:24px">Scrape every<br>real-estate<br><span class="grad">lead.</span></h2>
-    <div style="margin-top:50px;font-size:34px;color:var(--mute)">Leads found</div>
-    <div id="leadCount" style="font-size:130px;font-weight:800;letter-spacing:-.03em">0</div>
-  </div>
-  <div class="abs card" id="tbl" style="left:960px;top:140px;width:820px;overflow:hidden"></div>
-</div>
+<div class="abs hd" style="left:140px;top:110px"><div class="eyebrow">The cost of silence</div><h2 style="margin-top:20px;font-size:84px">An unanswered phone is a <span class="grad">donation to another agent.</span></h2></div>
+<div class="abs" id="st3" style="left:140px;top:520px;display:flex;gap:40px"></div></div>
 
-<!-- S3 match -->
 <div class="scene" id="s3">
-  <div class="abs" style="left:140px;top:90px"><div class="eyebrow">02 · Match</div>
-    <h2 style="margin-top:20px;font-size:80px">Spot buyer intent. <span class="grad">Connect it to an agent.</span></h2></div>
-  <div class="abs" id="sigs" style="left:140px;top:380px;width:760px"></div>
-  <div class="abs" id="ags" style="left:1180px;top:380px;width:600px"></div>
-  <svg class="abs" id="links" style="left:0;top:0" width="1920" height="1080"></svg>
-</div>
+<div class="abs" style="left:140px;top:170px;width:820px"><div class="eyebrow">Your cost of silence</div><h2 style="margin-top:24px">Estimated lost revenue</h2>
+<div id="lost" style="font-size:210px;font-weight:800;color:#f87171;letter-spacing:-.04em;margin-top:30px">$0</div><div style="font-size:40px;color:var(--mute)">per month</div></div>
+<div class="abs card" id="sls" style="left:1040px;top:190px;width:740px;padding:50px 50px 16px"></div></div>
 
-<!-- S4 call -->
 <div class="scene" id="s4">
-  <div class="abs" style="left:140px;top:200px;width:700px">
-    <div class="eyebrow">03 · Call</div>
-    <h2 style="margin-top:24px">A real voice.<br>A real <span class="grad">conversation.</span></h2>
-    <div id="wave" style="margin-top:70px"></div>
-    <div id="live" style="margin-top:20px;font-size:30px;color:var(--grn);font-weight:700">● LIVE · 00:00</div>
-  </div>
-  <div class="abs" style="left:1000px;top:540px;width:0;height:0" id="rings"></div>
-  <div class="abs card" id="chat" style="left:960px;top:150px;width:820px;height:780px;padding:40px;display:flex;flex-direction:column;justify-content:flex-end"></div>
-</div>
+<div class="abs" style="left:140px;top:170px;width:760px"><div class="eyebrow">Call XY AI Receptionist</div>
+<h2 style="margin-top:24px">Every call answered. <span class="grad">Every lead qualified.</span></h2>
+<div id="wave" style="margin-top:60px"></div><div id="live" style="margin-top:16px;font-size:30px;color:var(--grn);font-weight:700">● LIVE CALL · $1.2M BUYER INQUIRY</div>
+<div style="margin-top:36px" id="chips"><span class="chip">✓ Qualified</span><span class="chip">✓ Showing booked</span><span class="chip">✓ Synced to CRM</span></div></div>
+<div class="abs card" id="chat" style="left:1000px;top:130px;width:790px;height:820px;padding:40px;display:flex;flex-direction:column;justify-content:flex-end"></div></div>
 
-<!-- S5 close -->
 <div class="scene" id="s5">
-  <div class="abs" style="left:140px;top:200px;width:760px">
-    <div class="eyebrow">04 · Close</div>
-    <h2 style="margin-top:24px">Signups land<br>while you <span class="grad">sleep.</span></h2>
-    <div style="margin-top:60px;font-size:34px;color:var(--mute)">Revenue</div>
-    <div id="rev" style="font-size:150px;font-weight:800;color:var(--grn);letter-spacing:-.03em">$0</div>
-  </div>
-  <div class="abs" id="toasts" style="left:1000px;top:210px;width:780px"></div>
-</div>
+<div class="abs hd" style="left:140px;top:110px"><div class="eyebrow">More than 24/7 answering</div><h2 style="margin-top:20px;font-size:84px">A revenue-generating <span class="grad">asset.</span></h2></div>
+<div class="abs" id="fcs" style="left:140px;top:460px;display:flex;gap:40px"></div></div>
 
-<!-- S6 stats -->
 <div class="scene" id="s6">
-  <div class="abs" style="left:140px;top:100px"><div class="eyebrow">Real test · real agents</div>
-    <h2 style="margin-top:20px;font-size:84px">$18 in. <span class="grad">$596 out.</span></h2></div>
-  <div class="abs" id="stats" style="left:140px;top:360px;width:1640px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px"></div>
-</div>
+<div class="abs" style="left:240px;top:150px;width:1440px">
+<div class="eyebrow">Trusted by top real estate professionals</div>
+<div id="q" style="font-size:66px;font-weight:700;letter-spacing:-.02em;line-height:1.18;margin-top:50px;opacity:0">“Since switching to Call XY, the AI has captured over <span class="grad">$40,000</span> in potential commissions. It sounds so natural that clients think I hired an assistant.”</div>
+<div id="qa" style="display:flex;align-items:center;gap:26px;margin-top:60px;opacity:0"><div class="av" style="width:90px;height:90px"></div><div style="font-size:36px;font-weight:700">Sarah Jenkins<div style="font-size:26px;color:var(--mute);font-weight:500">Top Producing Realtor, Keller Williams</div></div></div></div></div>
 
-<!-- S7 outro -->
 <div class="scene" id="s7">
-  <div class="abs" style="left:0;top:330px;width:1920px;text-align:center">
-    <div id="logo" style="display:inline-flex;align-items:center;gap:36px;opacity:0">
-      <div style="width:150px;height:150px;border-radius:40px;background:linear-gradient(135deg,#6366f1,#ec4899);display:grid;place-items:center;font-size:84px">📞</div>
-      <div style="font-size:170px;font-weight:800;letter-spacing:-.04em">Callxy</div>
-    </div>
-    <div id="tag" style="font-size:54px;color:var(--ind2);margin-top:30px;opacity:0">The AI sales rep that makes money while you sleep.</div>
-    <div id="cta" style="display:inline-block;margin-top:70px;font-size:48px;font-weight:700;padding:28px 60px;border-radius:99px;background:var(--ind);opacity:0">real.callxy.com</div>
-  </div>
-</div>
+<div class="abs" style="left:140px;top:110px"><div class="eyebrow">How it works</div><h2 style="margin-top:20px;font-size:84px">Live in <span class="grad">under 30 minutes.</span></h2></div>
+<div class="abs" id="steps" style="left:140px;top:400px"></div></div>
 
+<div class="scene" id="s8"><div class="abs" style="left:0;top:210px;width:1920px;text-align:center">
+<div id="logo" style="display:inline-flex;align-items:center;gap:36px;opacity:0"><div style="width:140px;height:140px;border-radius:38px;background:linear-gradient(135deg,#6366f1,#ec4899);display:grid;place-items:center;font-size:80px">📞</div><div style="font-size:160px;font-weight:800;letter-spacing:-.04em">Call XY</div></div>
+<div id="tag" style="font-size:56px;font-weight:700;margin-top:34px;opacity:0">Stop losing money to <span class="grad">voicemail.</span></div>
+<div id="cta" style="display:inline-block;margin-top:60px;font-size:50px;font-weight:700;padding:30px 70px;border-radius:99px;background:var(--ind);opacity:0">Claim Your Spot Now</div>
+<div id="sub" style="font-size:34px;color:var(--amb);margin-top:44px;font-weight:700;opacity:0">Only 4 onboarding spots remaining this month</div>
+<div id="sub2" style="font-size:30px;color:var(--mute);margin-top:16px;opacity:0">14-day free trial · Setup in under 30 minutes · real.callxy.com</div></div></div>
 </div>
 <script src="node_modules/gsap/dist/gsap.min.js"></script>
 <script>
-const $=s=>document.querySelector(s);
-const tl=gsap.timeline({paused:true});
-const E='power3.out';
+const $=s=>document.querySelector(s);const tl=gsap.timeline({paused:true});const E='power3.out';
+function scene(id,a,b){tl.fromTo(id,{opacity:0},{opacity:1,duration:.4},a);tl.to(id,{opacity:0,duration:.4},b-.4);}
+function words(el,t){el.innerHTML=t.split(' ').map(w=>`<span class="word">${w}</span>`).join(' ');return el.querySelectorAll('.word');}
+function count(sel,to,a,d,fmt){const o={v:0};tl.to(o,{v:to,duration:d,ease:'power2.out',onUpdate(){$(sel).textContent=fmt(o.v)}},a);}
 
-// helper: scene in/out
-function scene(id,a,b){
-  tl.fromTo(id,{opacity:0},{opacity:1,duration:.4},a);
-  tl.to(id,{opacity:0,duration:.4},b-.4);
-}
-// words
-function words(el,txt){ el.innerHTML=txt.split(' ').map(w=>`<span class="word">${w}</span>`).join(' '); return el.querySelectorAll('.word'); }
+/* S1 0-4.2 */
+scene('#s1',0,4.2);
+tl.fromTo(words($('#hook1'),'The $25k listing you just missed'),{opacity:0,y:60},{opacity:1,y:0,duration:.6,stagger:.14,ease:E},.3);
+tl.fromTo(words($('#hook2'),'won\u2019t happen again.'),{opacity:0,y:60},{opacity:1,y:0,duration:.6,stagger:.2,ease:E},1.9);
+tl.to('#s1 .abs',{scale:1.05,duration:4,ease:'none',transformOrigin:'0 50%'},0);
+$('#hook1').style.fontSize='128px';$('#hook2').style.fontSize='128px';
 
-/* S1 0-3.4 */
-scene('#s1',0,3.4);
-const w1=words($('#hook1'),'Sales never sleeps.');
-const w2=words($('#hook2'),'Your rep doesn’t have to.');
-tl.fromTo(w1,{opacity:0,y:60},{opacity:1,y:0,duration:.6,stagger:.18,ease:E},.3);
-tl.fromTo(w2,{opacity:0,y:60},{opacity:1,y:0,duration:.6,stagger:.15,ease:E},1.3);
-tl.to('#s1 .abs',{scale:1.06,duration:3.2,ease:'none',transformOrigin:'0 50%'},0);
+/* S2 3.8-10.4 */
+scene('#s2',3.8,10.4);
+const s3=[['78%','Hire the first agent','78% of buyers and sellers hire the first agent they actually speak to.',78,v=>Math.round(v)+'%'],['50%','Call the next option','Voicemail? Half immediately open Zillow or Google to call the next agent.',50,v=>Math.round(v)+'%'],['5 min','The golden window','Wait longer than 5 minutes and your odds of qualifying a lead drop 400%.',5,v=>Math.round(v)+' min']];
+$('#st3').innerHTML=s3.map((s,i)=>`<div class="card stat3"><b id="n${i}">0</b><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+tl.fromTo('#s2 .hd',{opacity:0,y:-30},{opacity:1,y:0,duration:.6,ease:E},4.0);
+tl.fromTo('.stat3',{opacity:0,y:60,scale:.94},{opacity:1,y:0,scale:1,duration:.5,stagger:.6,ease:E},4.8);
+s3.forEach((s,i)=>count('#n'+i,s[3],4.9+i*.6,1.4,s[4]));
 
-/* S2 3.0-7.6 */
-scene('#s2',3.0,7.6);
-const leads=[['Maria Santos','Austin, TX','Zillow','z'],['Derek Cho','Denver, CO','Realtor.com','r'],['Priya Nair','Miami, FL','Zillow','z'],['Tom Becker','Phoenix, AZ','Realtor.com','r'],['Alicia Gomez','Tampa, FL','Zillow','z'],['James Ruiz','Dallas, TX','Realtor.com','r'],['Nina Patel','Seattle, WA','Zillow','z']];
-$('#tbl').innerHTML=leads.map(l=>`<div class="row"><div class="av"></div><div><b>${l[0]}</b><div style="font-size:22px;color:var(--mute)">${l[1]}</div></div><span class="badge ${l[3]}">${l[2]}</span></div>`).join('');
-tl.fromTo('#s2 .abs:first-child',{opacity:0,x:-60},{opacity:1,x:0,duration:.7,ease:E},3.2);
-tl.fromTo('#tbl',{opacity:0,x:80},{opacity:1,x:0,duration:.7,ease:E},3.3);
-tl.fromTo('#tbl .row',{opacity:0,x:60},{opacity:1,x:0,duration:.4,stagger:.3,ease:E},3.8);
-const lc={v:0};
-tl.to(lc,{v:2847,duration:3.4,ease:'power2.out',onUpdate(){$('#leadCount').textContent=Math.round(lc.v).toLocaleString()}},3.8);
+/* S3 10.0-15.4 */
+scene('#s3',10.0,15.4);
+const sl=[['Missed calls per week',5,.25,v=>Math.round(v)],['Average client value',10000,.5,v=>'$'+(Math.round(v/100)*100).toLocaleString()],['Close rate from calls',5,.2,v=>Math.round(v)+'%']];
+$('#sls').innerHTML=sl.map((s,i)=>`<div class="sl"><div class="t"><span>${s[0]}</span><span id="sv${i}">0</span></div><div class="bar"><div class="fill" id="sf${i}"></div></div></div>`).join('');
+tl.fromTo('#s3 > .abs:first-child',{opacity:0,x:-60},{opacity:1,x:0,duration:.7,ease:E},10.2);
+tl.fromTo('#sls',{opacity:0,x:80},{opacity:1,x:0,duration:.7,ease:E},10.3);
+tl.to('.sl',{opacity:1,duration:.4,stagger:.3},10.8);
+sl.forEach((s,i)=>{const o={v:0};tl.to(o,{v:s[1],duration:1.2,ease:'power2.out',onUpdate(){$('#sv'+i).textContent=s[3](o.v)}},11+i*.3);tl.to('#sf'+i,{width:(s[2]*100)+'%',duration:1.2,ease:'power2.out'},11+i*.3);});
+count('#lost',10000,11.4,2.4,v=>'$'+(Math.round(v/50)*50).toLocaleString());
 
-/* S3 7.2-11.8 */
-scene('#s3',7.2,11.8);
-const sigs=[['REDDIT · r/FirstTimeHomeBuyers','“Looking for a buyer’s agent in Austin, any recs?”'],['X · @jmorales','“We’re relocating to Miami in the spring — need an agent.”'],['FACEBOOK GROUP','“Anyone know a good Denver realtor for condos?”']];
-const ags=[['Maria Santos','Austin, TX'],['Priya Nair','Miami, FL'],['Derek Cho','Denver, CO']];
-$('#sigs').innerHTML=sigs.map(s=>`<div class="card sig"><small>${s[0]}</small>${s[1]}</div>`).join('');
-$('#ags').innerHTML=ags.map(a=>`<div class="card ag"><div class="av"></div><div>${a[0]}<div style="font-size:22px;color:var(--mute);font-weight:500">${a[1]}</div></div></div>`).join('');
-tl.fromTo('#s3 .abs:first-child',{opacity:0,y:-30},{opacity:1,y:0,duration:.6,ease:E},7.4);
-tl.fromTo('.sig',{opacity:0,x:-80},{opacity:1,x:0,duration:.5,stagger:.35,ease:E},7.9);
-tl.fromTo('.ag',{opacity:0,x:80},{opacity:1,x:0,duration:.5,stagger:.35,ease:E},8.2);
-// links drawn once layout known
-function drawLinks(){
-  const S=[...document.querySelectorAll('.sig')],A=[...document.querySelectorAll('.ag')];
-  const svg=$('#links');svg.innerHTML='';
-  S.forEach((s,i)=>{
-    const sr={y:s.offsetTop+380+s.offsetHeight/2,x:140+760},ar={y:A[i].offsetTop+380+A[i].offsetHeight/2,x:1180};
-    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
-    p.setAttribute('d',`M${sr.x} ${sr.y} C ${sr.x+120} ${sr.y}, ${ar.x-120} ${ar.y}, ${ar.x} ${ar.y}`);
-    p.setAttribute('stroke','#818cf8');p.setAttribute('stroke-width','4');p.setAttribute('fill','none');p.setAttribute('stroke-linecap','round');
-    svg.appendChild(p);const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;
-    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');dot.setAttribute('r','10');dot.setAttribute('fill','#c084fc');dot.setAttribute('cx',ar.x);dot.setAttribute('cy',ar.y);dot.style.opacity=0;svg.appendChild(dot);
-    tl.to(p,{strokeDashoffset:0,duration:.7,ease:'power2.inOut'},9.2+i*.5);
-    tl.to(dot,{opacity:1,duration:.2},9.8+i*.5);
-  });
-}
-document.fonts.ready.then(()=>{drawLinks();window.READY=true;});
-
-/* S4 11.4-18.4 */
-scene('#s4',11.4,18.4);
+/* S4 15.0-23.0 */
+scene('#s4',15.0,23.0);
 $('#wave').innerHTML=Array.from({length:34},()=>'<i></i>').join('');
-tl.fromTo('#s4 .abs:first-child',{opacity:0,x:-60},{opacity:1,x:0,duration:.7,ease:E},11.6);
-tl.fromTo('#chat',{opacity:0,x:80},{opacity:1,x:0,duration:.7,ease:E},11.7);
-for(let i=0;i<3;i++){const r=document.createElement('div');r.className='ring';r.style.cssText=`left:-90px;top:-90px;width:180px;height:180px;display:none`;$('#rings').appendChild(r);}
-const chat=[['a','Hi Maria, this is Ava with Callxy. Is now a quick moment?'],['h','Sure, who is this again?'],['a','I help agents get matched with buyers actively searching in Austin. Want to see how?'],['h','Okay… how much is it?'],['a','$149 to get started, and I can set it up right now.'],['h','Let’s do it.']];
+const chat=[['a','Thanks for calling. How can I help you today?'],['h','I\u2019m interested in the $1.2M home on Maple Street.'],['a','Great choice. Are you pre-approved, and what\u2019s your timeline?'],['h','Pre-approved. I\u2019d like to see it this weekend.'],['a','Booked: Saturday, 10 AM. I\u2019m texting your agent the details now.']];
 $('#chat').innerHTML=chat.map(c=>`<div class="bub ${c[0]}">${c[1]}</div>`).join('');
-tl.fromTo('#chat .bub',{opacity:0,y:30,scale:.95},{opacity:1,y:0,scale:1,duration:.4,stagger:.95,ease:E},12.3);
-const lv={v:0};
-tl.to(lv,{v:41,duration:6,ease:'none',onUpdate(){const s=Math.floor(lv.v);$('#live').textContent='● LIVE · 00:'+String(s).padStart(2,'0')}},12);
+tl.fromTo('#s4 > .abs:first-child',{opacity:0,x:-60},{opacity:1,x:0,duration:.7,ease:E},15.2);
+tl.fromTo('#chat',{opacity:0,x:80},{opacity:1,x:0,duration:.7,ease:E},15.3);
+tl.fromTo('#chat .bub',{opacity:0,y:30,scale:.95},{opacity:1,y:0,scale:1,duration:.4,stagger:1.0,ease:E},15.9);
+tl.fromTo('.chip',{opacity:0,scale:.8},{opacity:1,scale:1,duration:.4,stagger:.35,ease:'back.out(1.6)'},19.6);
 
-/* S5 18.0-22.8 */
-scene('#s5',18.0,22.8);
-const tz=['Maria Santos','Priya Nair','Derek Cho','Alicia Gomez'];
-$('#toasts').innerHTML=tz.map(n=>`<div class="card toast"><div class="chk">✓</div><div>${n}<div style="font-size:22px;color:var(--mute);font-weight:500">New paid signup</div></div><div class="amt">+$149</div></div>`).join('');
-tl.fromTo('#s5 .abs:first-child',{opacity:0,x:-60},{opacity:1,x:0,duration:.7,ease:E},18.2);
-tl.fromTo('.toast',{opacity:0,y:60,scale:.9},{opacity:1,y:0,scale:1,duration:.5,stagger:.6,ease:'back.out(1.6)'},18.7);
-const rv={v:0};
-[149,298,447,596].forEach((v,i)=>tl.to(rv,{v,duration:.5,ease:'power2.out',onUpdate(){$('#rev').textContent='$'+Math.round(rv.v)}},18.8+i*.6));
+/* S5 22.6-27.0 */
+scene('#s5',22.6,27.0);
+const fc=[['\u23F0','Reclaim your freedom','No more interrupted showings, family dinners or weekends for spam calls and basic property questions.'],['\uD83C\uDF19','Qualify leads instantly','Prospects who call at 11 PM on a Sunday get a human-like response, qualifying questions and a booked callback.'],['\uD83D\uDD17','Instant CRM integration','Works with your existing number, Follow Up Boss, kvCORE and your calendar. No IT project.']];
+$('#fcs').innerHTML=fc.map(f=>`<div class="card fc"><div class="ic">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></div>`).join('');
+tl.fromTo('#s5 .hd',{opacity:0,y:-30},{opacity:1,y:0,duration:.6,ease:E},22.8);
+tl.fromTo('.fc',{opacity:0,y:60},{opacity:1,y:0,duration:.5,stagger:.35,ease:E},23.4);
 
-/* S6 22.4-27.4 */
-scene('#s6',22.4,27.4);
-const st=[['38','Outbound calls',''],['11','Live conversations',''],['4','Paid signups','var(--grn)'],['10.5%','Conversion · 3× industry avg',''],['$18','Total API cost','var(--amb)'],['$578','Profit','var(--grn)']];
-$('#stats').innerHTML=st.map(s=>`<div class="card stat"><b style="color:${s[2]||'var(--ink)'}">${s[0]}</b><span>${s[1]}</span></div>`).join('');
-tl.fromTo('#s6 > .abs:first-child',{opacity:0,y:-30},{opacity:1,y:0,duration:.6,ease:E},22.6);
-tl.fromTo('.stat',{opacity:0,y:50,scale:.94},{opacity:1,y:0,scale:1,duration:.5,stagger:.25,ease:E},23.1);
+/* S6 26.6-31.0 */
+scene('#s6',26.6,31.0);
+tl.fromTo('#q',{opacity:0,y:40},{opacity:1,y:0,duration:.8,ease:E},27.0);
+tl.fromTo('#qa',{opacity:0,y:30},{opacity:1,y:0,duration:.6,ease:E},28.2);
 
-/* S7 27.0-31 */
-scene('#s7',27.0,31.5);
-tl.fromTo('#logo',{opacity:0,scale:.8},{opacity:1,scale:1,duration:.8,ease:'back.out(1.5)'},27.4);
-tl.fromTo('#tag',{opacity:0,y:30},{opacity:1,y:0,duration:.7,ease:E},28.2);
-tl.fromTo('#cta',{opacity:0,y:30,scale:.9},{opacity:1,y:0,scale:1,duration:.6,ease:'back.out(1.6)'},29.0);
-tl.to('#cta',{boxShadow:'0 0 80px #6366f1aa',duration:.8,yoyo:true,repeat:1},29.6);
+/* S7 30.6-35.0 */
+scene('#s7',30.6,35.0);
+const sp=[['Connect your number','Keep your existing business line.'],['Train your AI','Your FAQs, business hours and booking rules.'],['Go live & relax','It answers calls, books appointments and sends you summaries.']];
+$('#steps').innerHTML=sp.map((s,i)=>`<div class="card step"><div class="n">${i+1}</div><div><h3>${s[0]}</h3><p>${s[1]}</p></div></div>`).join('');
+tl.fromTo('#s7 > .abs:first-child',{opacity:0,y:-30},{opacity:1,y:0,duration:.6,ease:E},30.8);
+tl.fromTo('.step',{opacity:0,x:-80},{opacity:1,x:0,duration:.5,stagger:.5,ease:E},31.4);
 
-// ambient: drifting grid
-tl.fromTo('#grid',{x:0,y:0},{x:-80,y:-80,duration:31.5,ease:'none'},0);
+/* S8 34.6-39 */
+scene('#s8',34.6,39.5);
+tl.fromTo('#logo',{opacity:0,scale:.8},{opacity:1,scale:1,duration:.8,ease:'back.out(1.5)'},35.0);
+tl.fromTo('#tag',{opacity:0,y:30},{opacity:1,y:0,duration:.6,ease:E},35.8);
+tl.fromTo('#cta',{opacity:0,y:30,scale:.9},{opacity:1,y:0,scale:1,duration:.6,ease:'back.out(1.6)'},36.5);
+tl.to('#cta',{boxShadow:'0 0 90px #6366f1cc',duration:.7,yoyo:true,repeat:1},37.1);
+tl.fromTo('#sub',{opacity:0},{opacity:1,duration:.5},37.3);
+tl.fromTo('#sub2',{opacity:0},{opacity:1,duration:.5},37.8);
 
-const DUR=31.5;
-function seek(t){
-  tl.time(t,false);
-  // waveform driven by time
-  const active=t>11.6&&t<18;
-  document.querySelectorAll('#wave i').forEach((b,i)=>{
-    const talk=active?(Math.sin(t*9+i*.7)*.5+.5)*(Math.sin(t*2.3+i*.2)*.5+.5):0;
-    b.style.height=(14+talk*140)+'px';
-  });
-  // pulsing rings
-  document.querySelectorAll('.ring').forEach((r,i)=>{
-    if(!(t>11.8&&t<18)){r.style.display='none';return}
-    const p=((t*0.6+i/3)%1);r.style.display='block';r.style.opacity=(1-p)*.5;r.style.transform=`scale(${1+p*1.6})`;
-  });
-}
-window.seek=seek;window.DUR=DUR;
+tl.fromTo('#grid',{x:0,y:0},{x:-80,y:-80,duration:39.5,ease:'none'},0);
+const DUR=39.5;
+function seek(t){tl.time(t,false);const on=t>15.8&&t<22.4;
+ document.querySelectorAll('#wave i').forEach((b,i)=>{const k=on?(Math.sin(t*9+i*.7)*.5+.5)*(Math.sin(t*2.3+i*.2)*.5+.5):0;b.style.height=(14+k*140)+'px'});}
+window.seek=seek;window.DUR=DUR;window.READY=true;
 </script></body></html>

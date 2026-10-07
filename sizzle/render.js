@@ -5,7 +5,7 @@ const fs=require('fs');
   const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});
   const p=await b.newPage({viewport:{width:1920,height:1080}});
   await p.goto('file://'+__dirname+'/index.html');
-  await p.waitForFunction('window.READY');
+  await p.waitForFunction('window.READY');await p.evaluate('document.fonts.ready');
   fs.mkdirSync('frames',{recursive:true});
   const fps=30,dur=await p.evaluate('DUR');
   if(times){for(const t of times){await p.evaluate(t=>seek(t),t);await p.screenshot({path:`frames/still_${t}.png`});}}
